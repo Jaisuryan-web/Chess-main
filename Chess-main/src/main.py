@@ -1,9 +1,31 @@
 import chess as ch
 import pygame
-import math 
+import math
+import tkinter as tk
+from tkinter import messagebox 
 
 def evaluatePosition(board, pieces):
     pass
+
+def showVictoryPopup(winner, game_type):
+    """Show a victory popup message using tkinter"""
+    # Create a hidden root window
+    root = tk.Tk()
+    root.withdraw()  # Hide the main window
+    
+    if game_type == "checkmate":
+        title = "🏆 CHECKMATE! 🏆"
+        message = f"Congratulations!\n\n{winner} WINS by Checkmate!\n\nWell played!"
+    elif game_type == "stalemate":
+        title = "🤝 STALEMATE 🤝"
+        message = "It's a Draw!\n\nStalemate - No legal moves available\nbut the king is not in check."
+    else:
+        title = "🤝 DRAW 🤝"
+        message = "The game ends in a draw!"
+    
+    # Show the message box
+    messagebox.showinfo(title, message)
+    root.destroy()  # Clean up the root window
 def gameStateCheck(board:ch.board, pieces) -> int:
     """Returns an integer corresponding to game state. 0->Can Continue 1->Checkmate 2->Stalemate 3->Draw.
     Draw condition to be implemented"""
