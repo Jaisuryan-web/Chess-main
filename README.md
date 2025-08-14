@@ -1,4 +1,4 @@
-Chess
+Chess:
 A playable chess game with AI Bots made with Python. GUI with pygame and features usage of FEN notation to play any position. Made on Pycharm Community Edition. Python Interpreter: 3.10 Made by JAISURYAN as a hobby project to understand working with python and to learn the usage of efficient data structures and algorithms to quickly find best possible moves by the AI bot.
 
 Completed Features:
